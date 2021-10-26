@@ -5,8 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Mappings\DespesaMesMapping.cs~RF66cfb1c.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Context\" />
     <Folder Include="Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SGF.Domain\SGF.Domain.csproj" />
   </ItemGroup>
 
 </Project>
