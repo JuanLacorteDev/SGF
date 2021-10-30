@@ -14,5 +14,11 @@ namespace SGF.Data.Context
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Mes> Meses { get; set; }
         public DbSet<DespesaMes> DespesasMeses { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(SGFDbContext).Assembly);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

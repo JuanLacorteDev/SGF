@@ -10,6 +10,6 @@ namespace SGF.Domain.Entities
         {
             Id = Guid.NewGuid();
         }
-        public Guid Id { get; set; }
+        virtual public Guid Id { get; set; }
     }
 }
