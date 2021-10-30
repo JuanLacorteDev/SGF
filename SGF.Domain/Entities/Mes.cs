@@ -12,6 +12,7 @@ namespace SGF.Domain.Entities
 
         //para mapeamento EF core N : N
         public List<DespesaMes> DespesaMeses { get; set; }
+        public List<RemuneracaoMes> RemunecaoMeses { get; set; }
 
     }
 }
