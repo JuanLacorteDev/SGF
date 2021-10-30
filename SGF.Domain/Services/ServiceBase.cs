@@ -4,8 +4,7 @@ using System.Text;
 
 namespace SGF.Domain.Services
 {
-    public class ServiceBase
+    public class ServiceBase 
     {
-
     }
 }
