@@ -1,13 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SGF.Application.Application;
+using SGF.Application.Interfaces.Application;
 using SGF.Data.Context;
 using SGF.Data.Repository;
 using SGF.Domain.Interface.Repository;
+using SGF.Domain.Interface.Service;
 using SGF.Domain.Interfaces.Notification;
 using SGF.Domain.Notifications;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SGF.Domain.Services;
 
 namespace SGF.Api.Configuration
 {
@@ -23,7 +23,11 @@ namespace SGF.Api.Configuration
             #endregion
 
             #region Configuração de serviços
+            services.AddScoped<IDespesaService, DespesaService>();
+            #endregion
 
+            #region Configuração Application
+            services.AddScoped<IDespesaApp, DespesaApp>();
             #endregion
 
             #region Configurações incomuns, configuraçoes unicas que não precisam de uma região dedicada

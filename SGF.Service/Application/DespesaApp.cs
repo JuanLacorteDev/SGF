@@ -3,6 +3,7 @@ using SGF.Application.Interfaces.Application;
 using SGF.Application.ViewModels;
 using SGF.Domain.Entities;
 using SGF.Domain.Interface.Service;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SGF.Application.Application
@@ -21,6 +22,11 @@ namespace SGF.Application.Application
         public async Task Adicionar(DespesaVM despesa)
         {
             await _despesaService.Adicionar(_mapper.Map<Despesa>(despesa));
+        }
+
+        public async Task<List<DespesaVM>> ObterDespesas()
+        {
+            return _mapper.Map<List<DespesaVM>>(await _despesaService.ObterDespesas());
         }
     }
 }

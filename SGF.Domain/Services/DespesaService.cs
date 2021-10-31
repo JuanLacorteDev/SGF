@@ -19,6 +19,11 @@ namespace SGF.Domain.Services
             _despesaRepository = despesaRepository;
         }
 
+        public async Task<List<Despesa>> ObterDespesas()
+        {
+            return await _despesaRepository.ObterTodasEntidades();
+        }
+
         public async Task Adicionar(Despesa despesa)
         {
             if (ExecutarValidacao(new DespesaValidator(), despesa)) return;
@@ -42,5 +47,7 @@ namespace SGF.Domain.Services
         {
             _despesaRepository?.Dispose();
         }
+
+        
     }
 }

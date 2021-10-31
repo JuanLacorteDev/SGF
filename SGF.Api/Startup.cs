@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SGF.Api.Configuration;
 using SGF.Data.Context;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,12 @@ namespace SGF.Api
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
-            services.AddControllers(); 
+            services.AddControllers();
+
+            //services.AddSwaggerConfig();
+
+            services.ResolveDepedencies();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +49,8 @@ namespace SGF.Api
             }
 
             app.UseHttpsRedirection();
+
+            //app.UseSwaggerConfig();
 
             app.UseRouting();
 
