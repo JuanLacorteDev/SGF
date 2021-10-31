@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SGF.Data.Context;
+using SGF.Data.Repository;
+using SGF.Domain.Interface.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +16,18 @@ namespace SGF.Api.Configuration
             //configuração de context
             services.AddScoped<SGFDbContext>();
 
-            #region Configuração de repositorios
+            #region Configuração de repositórios
+            services.AddScoped<IDespesaRepository, DespesaRepository>();
             #endregion
 
             #region Configuração de serviços
+
             #endregion
 
-            #region Configurações incomuns, configuraçoes unicas que nao precisam de uma região dedicada
+            #region Configurações incomuns, configuraçoes unicas que não precisam de uma região dedicada
+
             #endregion
+
             return services;
         }
     }
