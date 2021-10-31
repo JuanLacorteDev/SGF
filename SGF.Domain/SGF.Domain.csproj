@@ -8,8 +8,4 @@
     <PackageReference Include="FluentValidation" Version="10.3.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SGF.Service\SGF.Application.csproj" />
-  </ItemGroup>
-
 </Project>

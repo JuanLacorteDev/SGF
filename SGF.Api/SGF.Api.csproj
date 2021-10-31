@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SGF.Data\SGF.Data.csproj" />
+    <ProjectReference Include="..\SGF.Service\SGF.Application.csproj" />
   </ItemGroup>
 
 

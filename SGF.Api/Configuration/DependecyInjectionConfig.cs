@@ -2,6 +2,8 @@
 using SGF.Data.Context;
 using SGF.Data.Repository;
 using SGF.Domain.Interface.Repository;
+using SGF.Domain.Interfaces.Notification;
+using SGF.Domain.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,7 @@ namespace SGF.Api.Configuration
             #endregion
 
             #region Configurações incomuns, configuraçoes unicas que não precisam de uma região dedicada
-
+            services.AddScoped<INotificador, Notificador>();
             #endregion
 
             return services;

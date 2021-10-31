@@ -2,6 +2,7 @@
 using SGF.Domain.Entities.Validations;
 using SGF.Domain.Interface.Repository;
 using SGF.Domain.Interface.Service;
+using SGF.Domain.Interfaces.Notification;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,7 +13,8 @@ namespace SGF.Domain.Services
     public class DespesaService : ServiceBase, IDespesaService
     {
         protected readonly IDespesaRepository _despesaRepository;
-        public DespesaService(IDespesaRepository despesaRepository)
+        public DespesaService(IDespesaRepository despesaRepository,
+                              INotificador notificador): base(notificador)
         {
             _despesaRepository = despesaRepository;
         }

@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using SGF.Domain.Interface.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
+using SGF.Application.Interfaces.Application;
+using SGF.Application.ViewModels;
+using SGF.Domain.Interfaces.Notification;
 using System.Threading.Tasks;
 
 namespace SGF.Api.Controllers
@@ -12,17 +10,21 @@ namespace SGF.Api.Controllers
     [ApiController]
     public class DespesaController : CustomController
     {
-        protected readonly IDespesaService _despesaService;
-        public DespesaController(IDespesaService despesaService)
+        protected readonly IDespesaApp _despesaApp;
+        public DespesaController(IDespesaApp despesaService,
+                                 INotificador notificador) : base(notificador)
         {
-            _despesaService = despesaService;
+            _despesaApp = despesaService;
         }
 
-        public async Task<ActionResult> AdicionarDespesa(object despesa)
+        public async Task<ActionResult> AdicionarDespesa(DespesaVM despesa)
         {
-            //Criar ViewModels () => DespesaVM
-            //await _despesaService.Adicionar(DespesaVM);
-            return Ok();
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            await _despesaApp.Adicionar(despesa);
+            if(OperacaoValida()) return Ok();
+
+            return CustomResponse(despesa);
         }
     }
 }
