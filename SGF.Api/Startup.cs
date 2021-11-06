@@ -32,9 +32,9 @@ namespace SGF.Api
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
-            services.AddControllers();
 
-            //services.AddSwaggerConfig();
+
+            services.AddControllers();
 
             services.ResolveDepedencies();
             services.AddAutoMapper(typeof(Startup));
@@ -50,8 +50,6 @@ namespace SGF.Api
 
             app.UseHttpsRedirection();
 
-            //app.UseSwaggerConfig();
-
             app.UseRouting();
 
             app.UseAuthorization();
@@ -60,6 +58,7 @@ namespace SGF.Api
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
