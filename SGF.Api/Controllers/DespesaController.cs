@@ -28,8 +28,8 @@ namespace SGF.Api.Controllers
         public async Task<ActionResult> AdicionarDespesa(DespesaVM despesa)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
-
             await _despesaApp.Adicionar(despesa);
+
             if(OperacaoValida()) return Ok();
 
             return CustomResponse(despesa);

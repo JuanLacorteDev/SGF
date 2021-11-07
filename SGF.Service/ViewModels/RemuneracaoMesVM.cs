@@ -4,13 +4,12 @@ using System.Text;
 
 namespace SGF.Application.ViewModels
 {
-    public class DespesaMesVM
+    public class RemuneracaoMesVM
     {
+        public Guid RemuneracaoId { get; set; }
         public Guid MesId { get; set; }
-        public Guid DespesaId { get; set; }
 
-        //Propriedades para mapeamento relacional N : N
-        public DespesaVM Despesa { get; set; }
         public MesVM Mes { get; set; }
+        public RemuneracaoVM Remuneracao { get; set; }
     }
 }
