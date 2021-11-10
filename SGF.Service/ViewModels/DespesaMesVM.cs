@@ -10,7 +10,7 @@ namespace SGF.Application.ViewModels
         public Guid DespesaId { get; set; }
 
         //Propriedades para mapeamento relacional N : N
-        public DespesaVM Despesa { get; set; }
+        public DespesaCategoriasMesesVM Despesa { get; set; }
         public MesVM Mes { get; set; }
     }
 }

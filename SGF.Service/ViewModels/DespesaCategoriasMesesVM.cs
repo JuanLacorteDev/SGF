@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGF.Domain.Entities
+namespace SGF.Application.ViewModels
 {
-    public class Despesa : BaseEntity
+    public class DespesaCategoriasMesesVM
     {
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public Double Valor { get; set; }
         public Guid CategoriaId { get; set; }
-        public int DiaVencimento { get; set; }
-
 
 
         //para mapeamento EF core
-        public List<DespesaMes> DespesaMeses { get; set; }
-        public Categoria Categoria { get; set; }
+        public List<DespesaMesVM> DespesaMeses { get; set; }
+        public CategoriaDespesasVM Categoria { get; set; }
 
     }
 }

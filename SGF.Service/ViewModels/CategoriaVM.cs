@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text.Json.Serialization;
+using System;
 
 namespace SGF.Application.ViewModels
 {
     public class CategoriaVM
     {
-        public string Nome { get; set; }
-        public DateTime Data_Cadastro { get; set; }
+        public CategoriaVM()
+        {
+            Data_Cadastro = DateTime.Now;
+        }
 
-        //Para mapeamento EF core
-        public List<DespesaVM> Despesas { get; set; }
+        public string Nome { get; set; }
+        public Guid Id { get; set; }
+
+        [JsonIgnore]
+        public DateTime Data_Cadastro { get; set; }
     }
 }

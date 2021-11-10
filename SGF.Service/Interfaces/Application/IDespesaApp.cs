@@ -8,7 +8,7 @@ namespace SGF.Application.Interfaces.Application
     public interface IDespesaApp 
     {
         Task Adicionar(DespesaVM despesa);
-        Task<List<DespesaVM>> ObterDespesas();
+        Task<List<DespesaCategoriasMesesVM>> ObterDespesas();
 
     }
 }

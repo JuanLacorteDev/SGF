@@ -8,7 +8,8 @@ namespace SGF.Api.AutoMapperConfiguration
     {
         public AutoMapperMappings()
         {
-            CreateMap<DespesaVM, Despesa>().ReverseMap();
+            CreateMap<DespesaCategoriasMesesVM, Despesa>().ReverseMap();
+            CreateMap<CategoriaDespesasVM, Categoria>().ReverseMap();
             CreateMap<CategoriaVM, Categoria>().ReverseMap();
             CreateMap<MesVM, Mes>().ReverseMap();
             CreateMap<DespesaMesVM, DespesaMes>().ReverseMap();

@@ -10,11 +10,6 @@ namespace SGF.Application.ViewModels
         public string Descricao { get; set; }
         public Double Valor { get; set; }
         public Guid CategoriaId { get; set; }
-
-
-
-        //para mapeamento EF core
-        public List<DespesaMesVM> DespesaMeses { get; set; }
-        public CategoriaVM Categoria { get; set; }
+        public Guid MesId { get; set; }
     }
 }

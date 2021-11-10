@@ -25,6 +25,9 @@ namespace SGF.Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(8,2)");
 
+            builder.Property(d => d.DiaVencimento)
+                .IsRequired();
+
         }
     }
 }

@@ -7,7 +7,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SGF.Api.Configuration;
 using SGF.Data.Context;
-using Newtonsoft.Json;
 using System;
 
 namespace SGF.Api

@@ -19,7 +19,7 @@ namespace SGF.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<DespesaVM>>> ObterDespesas()
+        public async Task<ActionResult<List<DespesaCategoriasMesesVM>>> ObterDespesas()
         {
             return await _despesaApp.ObterDespesas();
         }
