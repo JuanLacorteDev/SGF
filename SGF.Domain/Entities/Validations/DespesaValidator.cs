@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SGF.Domain.Entities.Validations
@@ -14,6 +15,7 @@ namespace SGF.Domain.Entities.Validations
 
             RuleFor(d => d.Nome)
                 .NotEmpty().WithMessage("Criar arquivo de mensagens **Nome Vazio**");
+
         }
     }
 }

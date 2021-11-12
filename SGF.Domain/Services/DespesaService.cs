@@ -21,21 +21,46 @@ namespace SGF.Domain.Services
 
         public async Task<List<Despesa>> ObterDespesas()
         {
-            return await _despesaRepository.ObterTodasEntidades();
+            try
+            {
+                var result = await _despesaRepository.ObterTodasEntidades();
+                return result;
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public async Task Adicionar(Despesa despesa)
         {
-            if (ExecutarValidacao(new DespesaValidator(), despesa)) return;
+            try
+            {
+                if (!ExecutarValidacao(new DespesaValidator(), despesa)) return;
 
-            await _despesaRepository.Adicionar(despesa);
+                await _despesaRepository.Adicionar(despesa);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public async Task Atualizar(Despesa despesa)
         {
-            if (ExecutarValidacao(new DespesaValidator(), despesa)) return;
+            try
+            {
+                if (!ExecutarValidacao(new DespesaValidator(), despesa)) return;
 
-            await _despesaRepository.Atualizar(despesa);
+                await _despesaRepository.Atualizar(despesa);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+           
         }
 
         public async Task Remover(Guid id)

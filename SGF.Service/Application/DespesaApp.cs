@@ -21,7 +21,7 @@ namespace SGF.Application.Application
 
         public async Task Adicionar(DespesaVM despesa)
         {
-            await _despesaService.Adicionar(_mapper.Map<Despesa>(despesa));
+            await _despesaService.Adicionar(_mapper.Map<DespesaVM, Despesa>(despesa));
         }
 
         public async Task<List<DespesaCategoriasMesesVM>> ObterDespesas()
