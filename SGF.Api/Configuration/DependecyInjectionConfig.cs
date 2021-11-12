@@ -21,16 +21,19 @@ namespace SGF.Api.Configuration
             #region Configuração de repositórios
             services.AddScoped<IDespesaRepository, DespesaRepository>();
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+            services.AddScoped<IRemuneracaoRepository, RemuneracaoRespository>();
             #endregion
 
             #region Configuração de serviços
             services.AddScoped<IDespesaService, DespesaService>();
             services.AddScoped<ICategoriaService, CategoriaService>();
+            services.AddScoped<IRemuneracaoService, RemuneracaoService>();
             #endregion
 
             #region Configuração Application
             services.AddScoped<IDespesaApp, DespesaApp>();
             services.AddScoped<ICategoriaApp, CategoriaApp>();
+            services.AddScoped<IRemuneracaoApp, RemuneracaoApp>();
             #endregion
 
             #region Configurações incomuns, configuraçoes unicas que não precisam de uma região dedicada

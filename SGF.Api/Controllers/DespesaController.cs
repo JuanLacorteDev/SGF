@@ -30,7 +30,7 @@ namespace SGF.Api.Controllers
             if (!ModelState.IsValid) return CustomResponse(ModelState);
             await _despesaApp.Adicionar(despesa);
 
-            if(OperacaoValida()) return Ok();
+            if(OperacaoValida()) return CustomResponse(despesa);
 
             return CustomResponse(despesa);
         }

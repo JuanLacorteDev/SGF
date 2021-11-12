@@ -14,7 +14,7 @@ namespace SGF.Data.Mappings
                 .HasColumnType("varchar(8,2)");
 
             builder.Property(r => r.Descricao)
-                .HasColumnType("varchar(50)");
+                .HasColumnType("varchar(150)");
 
         }
     }
