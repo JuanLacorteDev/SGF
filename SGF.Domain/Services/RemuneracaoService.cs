@@ -25,6 +25,11 @@ namespace SGF.Domain.Services
             {
                 if (!ExecutarValidacao(new RemuneracaoValidator(), remuneracao)) return;
 
+                if (remuneracao.SalarioMensal)
+                {
+
+                }
+
                 await _remuneracaoRepository.Adicionar(remuneracao);
             }
             catch (Exception ex)

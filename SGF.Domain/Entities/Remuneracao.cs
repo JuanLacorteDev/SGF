@@ -10,7 +10,7 @@ namespace SGF.Domain.Entities
         public Double Valor { get; set; }
         public string Descricao { get; set; }
         public bool SalarioMensal { get; set; }
-        public Guid MesInicioId { get; set; }
+        public Guid? MesInicioId { get; set; }
 
         //para mapping EF core
         public List<RemuneracaoMes> RemuneracaoMeses { get; set; }

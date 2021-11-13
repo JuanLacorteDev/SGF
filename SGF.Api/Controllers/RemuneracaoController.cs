@@ -28,7 +28,7 @@ namespace SGF.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Adicoinar(RemuneracaoVM remuneracao)
+        public async Task<ActionResult> Adicionar(RemuneracaoVM remuneracao)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
