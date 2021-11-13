@@ -16,7 +16,7 @@ namespace SGF.Data.Mappings
 
             builder.Property(d => d.Nome)
                 .IsRequired()
-                .HasColumnType("varchar(15)");
+                .HasColumnType("varchar(40)");
 
             builder.Property(d => d.Descricao)
                 .HasColumnType("varchar(100)");
@@ -24,6 +24,9 @@ namespace SGF.Data.Mappings
             builder.Property(d => d.Valor)
                 .IsRequired()
                 .HasColumnType("varchar(8,2)");
+
+            builder.Property(d => d.DiaVencimento)
+                .IsRequired();
 
         }
     }

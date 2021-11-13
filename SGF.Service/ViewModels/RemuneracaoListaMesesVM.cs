@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGF.Domain.Interface.Service
+namespace SGF.Application.ViewModels
 {
-    public interface IServiceBase
+    public class RemuneracaoListaMesesVM
     {
+
     }
 }
