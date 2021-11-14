@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace SGF.Data.Repository
 {
-    public class RemuneracaoRespository : RepositoryBase<Remuneracao>, IRemuneracaoRepository
+    public class RemuneracaoRepository : RepositoryBase<Remuneracao>, IRemuneracaoRepository
     {
-        public RemuneracaoRespository(SGFDbContext context) : base(context)
+        public RemuneracaoRepository(SGFDbContext context) : base(context)
         {
         }
 
