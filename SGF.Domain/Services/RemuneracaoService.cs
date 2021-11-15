@@ -33,8 +33,6 @@ namespace SGF.Domain.Services
 
                 if (remuneracao.SalarioMensal)
                 {
-                    // Verificar possibilidade de refatoração dessa linha por meio do RemuneracaoMesesResolver dentro do MapperConfigs
-                    remuneracao.RemuneracaoMeses = new List<RemuneracaoMes>();
                     await AdicionarMesesRemuneracao(remuneracao);
                 }
                 await _remuneracaoRepository.Adicionar(remuneracao);

@@ -15,10 +15,11 @@ namespace SGF.Data.Repository
 
         public async Task<List<RemuneracaoMes>> ObterRemuneracaoMesSalarioMensal(int mesInicioNumero, int numAno)
         {
-            var result = await DbSet.Where(rm => rm.Remuneracao.SalarioMensal == true).OrderBy(rm => rm.Mes.Identificador_Numerico).ToListAsync();
+            var result = await DbSet.Where(rm => rm.Remuneracao.SalarioMensal == true)
+                                    .OrderBy(rm => rm.Mes.Identificador_Numerico).ToListAsync();
             var skipPoint = result.IndexOf(result.Find(x => x.Mes.Identificador_Numerico == mesInicioNumero));
-            var t = result.Skip(skipPoint).ToList();
-            return t;
+
+            return result.Skip(skipPoint).ToList();
         }
 
         public async Task RemoverEntidades(List<RemuneracaoMes> remuneracoesMeses)
