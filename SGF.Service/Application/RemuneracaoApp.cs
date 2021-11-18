@@ -27,10 +27,10 @@ namespace SGF.Application.Application
             await _remuneracaoService.Adicionar(_mapper.Map<Remuneracao>(remueracao));
         }
 
-        public async Task<RemuneracaoVM> ObterRemueracao(Guid MesId)
+        public async Task<List<RemuneracaoVM>> ObterRemueracao(Guid MesId)
         {
             var result = await _remuneracaoService.ObterRemuneracaoPorMes(MesId);
-            return _mapper.Map<RemuneracaoVM>(result);
+            return _mapper.Map<List<RemuneracaoVM>>(result);
         }
     }
 }

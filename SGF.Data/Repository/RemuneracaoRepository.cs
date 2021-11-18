@@ -16,10 +16,9 @@ namespace SGF.Data.Repository
         {
         }
 
-        public async Task<Remuneracao> ObterRemuneracaoPorMes(Guid _mesId)
+        public async Task<List<Remuneracao>> ObterRemuneracaoPorMes(Guid _mesId)
         {
-            return await DbSet.FirstOrDefaultAsync(r => r.RemuneracaoMeses
-                                                        .Select(x => x.MesId == _mesId).FirstOrDefault());  
+            return await DbSet.Where(r => r.RemuneracaoMeses.Where(rm => rm.MesId == _mesId).Count() > 0).ToListAsync();
         }
     }
 }

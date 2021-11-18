@@ -8,6 +8,6 @@ namespace SGF.Domain.Interface.Repository
 {
     public interface IRemuneracaoRepository: IRepositoryBase<Remuneracao>, IDisposable
     {
-        Task<Remuneracao> ObterRemuneracaoPorMes(Guid MesId);
+        Task<List<Remuneracao>> ObterRemuneracaoPorMes(Guid MesId);
     }
 }

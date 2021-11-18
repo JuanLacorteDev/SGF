@@ -44,7 +44,7 @@ namespace SGF.Domain.Services
 
         }
 
-        public async Task<Remuneracao> ObterRemuneracaoPorMes(Guid _mesId)
+        public async Task<List<Remuneracao>> ObterRemuneracaoPorMes(Guid _mesId)
         {
             try
             {
