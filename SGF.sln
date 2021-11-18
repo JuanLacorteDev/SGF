@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGF.Data", "SGF.Data\SGF.Data.csproj", "{D4ED84BA-DE77-421D-8B9D-AEADBD152B42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGF.Data", "SGF.Data\SGF.Data.csproj", "{D4ED84BA-DE77-421D-8B9D-AEADBD152B42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGF.Application", "SGF.Service\SGF.Application.csproj", "{975F37B5-949B-4274-A727-CECD6CF7364E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGF.Application", "SGF.Service\SGF.Application.csproj", "{975F37B5-949B-4274-A727-CECD6CF7364E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGF.Domain", "SGF.Domain\SGF.Domain.csproj", "{62252640-728C-4C67-84F1-92D7899CBE10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGF.Domain", "SGF.Domain\SGF.Domain.csproj", "{62252640-728C-4C67-84F1-92D7899CBE10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGF.Api", "SGF.Api\SGF.Api.csproj", "{D01597A0-3E6A-49C3-97AB-1B12289F32D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGF.Api", "SGF.Api\SGF.Api.csproj", "{D01597A0-3E6A-49C3-97AB-1B12289F32D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGF.ApiAws", "SGF.ApiAws\SGF.ApiAws.csproj", "{5944CDBF-900D-41AA-A515-0B4894CAEF0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D01597A0-3E6A-49C3-97AB-1B12289F32D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D01597A0-3E6A-49C3-97AB-1B12289F32D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D01597A0-3E6A-49C3-97AB-1B12289F32D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5944CDBF-900D-41AA-A515-0B4894CAEF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5944CDBF-900D-41AA-A515-0B4894CAEF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5944CDBF-900D-41AA-A515-0B4894CAEF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5944CDBF-900D-41AA-A515-0B4894CAEF0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
