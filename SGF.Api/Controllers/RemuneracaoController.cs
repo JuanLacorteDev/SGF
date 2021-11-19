@@ -22,7 +22,7 @@ namespace SGF.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<RemuneracaoVM>> ObterRemuneracaoPorMes(Guid mesId)
+        public async Task<ActionResult<List<RemuneracaoVM>>> ObterRemuneracaoPorMes(Guid mesId)
         {
             return await _remuneracaoApp.ObterRemueracao(mesId);
         }

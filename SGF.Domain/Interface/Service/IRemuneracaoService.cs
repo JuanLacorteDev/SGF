@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SGF.Domain.Interface.Service
 {
-    public interface IRemuneracaoService
+    public interface IRemuneracaoService : IDisposable
     {
         Task Adicionar(Remuneracao remuneracao);
-        Task<Remuneracao> ObterRemuneracaoPorMes(Guid _mesId);
+        Task<List<Remuneracao>> ObterRemuneracaoPorMes(Guid _mesId);
     }
 }

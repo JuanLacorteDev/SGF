@@ -9,6 +9,6 @@ namespace SGF.Application.Interfaces.Application
     public interface IRemuneracaoApp
     {
         Task Adicionar(RemuneracaoVM remueracao);
-        Task<RemuneracaoVM> ObterRemueracao(Guid MesId);
+        Task<List<RemuneracaoVM>> ObterRemueracao(Guid MesId);
     }
 }

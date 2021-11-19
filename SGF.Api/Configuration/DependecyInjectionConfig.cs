@@ -21,7 +21,9 @@ namespace SGF.Api.Configuration
             #region Configuração de repositórios
             services.AddScoped<IDespesaRepository, DespesaRepository>();
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
-            services.AddScoped<IRemuneracaoRepository, RemuneracaoRespository>();
+            services.AddScoped<IRemuneracaoRepository, RemuneracaoRepository>();
+            services.AddScoped<IMesRepository, MesRepository>();
+            services.AddScoped<IRemuneracaoMesRepository, RemuneracaoMesRepository>();
             #endregion
 
             #region Configuração de serviços

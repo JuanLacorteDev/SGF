@@ -28,7 +28,6 @@ namespace SGF.Api
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
 
-
             services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(opt =>
             {
