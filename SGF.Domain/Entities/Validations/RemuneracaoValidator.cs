@@ -1,7 +1,5 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using SGF.Domain.Entities.Messages;
 
 namespace SGF.Domain.Entities.Validations
 {
@@ -10,15 +8,15 @@ namespace SGF.Domain.Entities.Validations
         public RemuneracaoValidator()
         {
             RuleFor(r => r.Valor)
-                .NotNull().WithMessage("criar arquivo de mesagem ** valor nao pode ser nulo**");
+                .NotNull().WithMessage(MessagesResource.E004);
 
             RuleFor(r => r.MesInicioId)
                 .NotNull().When(r => r.SalarioMensal == true)
-                .WithMessage("Para salarios mensais é necessario informar o mes de inicio do salario.");
+                .WithMessage(MessagesResource.E005);
 
             RuleFor(r => r.Descricao)
                 .MaximumLength(150)
-                .WithMessage("mensagem de valor maximo");
+                .WithMessage(MessagesResource.E006);
         }
     }
 }
