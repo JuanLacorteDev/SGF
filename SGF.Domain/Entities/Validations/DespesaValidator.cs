@@ -1,8 +1,5 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using SGF.Domain.Entities.Messages;
 
 namespace SGF.Domain.Entities.Validations
 {
@@ -11,10 +8,10 @@ namespace SGF.Domain.Entities.Validations
         public DespesaValidator()
         {
             RuleFor(d => d.Valor)
-                .NotEmpty().WithMessage("Criar arquivo de mensagens **Valor Vazio**");
+                .NotEmpty().WithMessage(MessagesResource.E002);
 
             RuleFor(d => d.Nome)
-                .NotEmpty().WithMessage("Criar arquivo de mensagens **Nome Vazio**");
+                .NotEmpty().WithMessage(MessagesResource.E003);
 
         }
     }
