@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace SGF.ApiAws.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class DespesaController : CustomController
     {
         protected readonly IDespesaApp _despesaApp;

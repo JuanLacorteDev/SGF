@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 namespace SGF.ApiAws.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class CategoriaController : CustomController
     {
         protected readonly ICategoriaApp _categoriaApp;

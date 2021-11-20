@@ -8,7 +8,7 @@
     ],
     "profile"     : "SGFE-Admin",
     "region"      : "sa-east-1",
-    "configuration" : "Release",
+    "configuration" : "Production",
     "framework"     : "netcoreapp3.1",
     "s3-prefix"     : "SGF.ApiAws/",
     "template"      : "serverless.template",

@@ -26,6 +26,7 @@ namespace SGF.ApiAws
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
+
             services.AddControllers().AddNewtonsoftJson();
 
             services.ResolveDepedencies();
