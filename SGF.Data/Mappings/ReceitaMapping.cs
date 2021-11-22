@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace SGF.Data.Mappings
 {
-    public class RemuneracaoMapping : IEntityTypeConfiguration<Remuneracao>
+    public class ReceitaMapping : IEntityTypeConfiguration<Receita>
     {
-        public void Configure(EntityTypeBuilder<Remuneracao> builder)
+        public void Configure(EntityTypeBuilder<Receita> builder)
         {
             builder.HasKey(r => r.Id);
 
@@ -15,6 +15,9 @@ namespace SGF.Data.Mappings
 
             builder.Property(r => r.Descricao)
                 .HasColumnType("varchar(150)");
+
+            builder.Property(r => r.Data_Lancamento)
+                .IsRequired();
 
         }
     }

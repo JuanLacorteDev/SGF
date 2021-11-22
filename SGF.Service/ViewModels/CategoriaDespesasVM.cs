@@ -10,6 +10,6 @@ namespace SGF.Application.ViewModels
         public DateTime Data_Cadastro { get; set; }
 
         //Para mapeamento EF core
-        public List<DespesaCategoriasMesesVM> Despesas { get; set; }
+        public List<DespesaVM> Despesas { get; set; }
     }
 }

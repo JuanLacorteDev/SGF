@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGF.Application.ViewModels
+namespace SGF.Domain.Entities
 {
-    public class RemuneracaoVM
+    public class Receita : BaseEntity
     {
-        public Guid MesId { get; set; }
         public Double Valor { get; set; }
         public string Descricao { get; set; }
         public bool SalarioMensal { get; set; }
-        public Guid? MesInicioId { get; set; }
+        public DateTime Data_Lancamento { get; set; }
 
     }
 }
