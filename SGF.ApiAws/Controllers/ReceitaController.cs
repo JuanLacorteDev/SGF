@@ -11,23 +11,23 @@ using System.Threading.Tasks;
 namespace SGF.ApiAws.Controllers
 {
     [Route("api/[controller]")]
-    public class RemuneracaoController : CustomController
+    public class ReceitaController : CustomController
     {
-        protected readonly IRemuneracaoApp _remuneracaoApp;
-        public RemuneracaoController(INotificador notificador,
-                                        IRemuneracaoApp remuneracaoApp) : base(notificador)
+        protected readonly IReceitaApp _remuneracaoApp;
+        public ReceitaController(INotificador notificador,
+                                        IReceitaApp remuneracaoApp) : base(notificador)
         {
             _remuneracaoApp = remuneracaoApp;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<RemuneracaoVM>>> ObterRemuneracaoPorMes(Guid mesId)
+        public async Task<ActionResult<List<ReceitaVM>>> ObterReceitas()
         {
-            return await _remuneracaoApp.ObterRemueracao(mesId);
+            return await _remuneracaoApp.ObterReceitas();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Adicionar(RemuneracaoVM remuneracao)
+        public async Task<ActionResult> Adicionar(ReceitaVM remuneracao)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 

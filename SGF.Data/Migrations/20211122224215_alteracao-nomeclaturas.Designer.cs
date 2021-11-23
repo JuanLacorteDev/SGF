@@ -10,8 +10,8 @@ using SGF.Data.Context;
 namespace SGF.Data.Migrations
 {
     [DbContext(typeof(SGFDbContext))]
-    [Migration("20211030222208_remove_pk_despesaMes")]
-    partial class remove_pk_despesaMes
+    [Migration("20211122224215_alteracao-nomeclaturas")]
+    partial class alteracaonomeclaturas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,11 +52,14 @@ namespace SGF.Data.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("varchar(15)");
+                        .HasColumnType("varchar(40)");
 
                     b.Property<string>("Valor")
                         .IsRequired()
                         .HasColumnType("varchar(64)");
+
+                    b.Property<DateTime>("Vencimento")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -65,39 +68,31 @@ namespace SGF.Data.Migrations
                     b.ToTable("Despesas");
                 });
 
-            modelBuilder.Entity("SGF.Domain.Entities.DespesaMes", b =>
-                {
-                    b.Property<Guid>("DespesaId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("MesId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("DespesaId", "MesId");
-
-                    b.HasIndex("MesId");
-
-                    b.ToTable("DespesasMeses");
-                });
-
-            modelBuilder.Entity("SGF.Domain.Entities.Mes", b =>
+            modelBuilder.Entity("SGF.Domain.Entities.Receita", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Ano")
-                        .HasColumnType("int");
+                    b.Property<string>("Descricao")
+                        .HasColumnType("varchar(150)");
 
-                    b.Property<int>("Identificador_Numerico")
-                        .HasColumnType("int");
+                    b.Property<Guid>("MesId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid?>("MesInicioId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("SalarioMensal")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Valor")
+                        .IsRequired()
+                        .HasColumnType("varchar(64)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Meses");
+                    b.ToTable("Remuneracoes");
                 });
 
             modelBuilder.Entity("SGF.Domain.Entities.Despesa", b =>
@@ -111,38 +106,9 @@ namespace SGF.Data.Migrations
                     b.Navigation("Categoria");
                 });
 
-            modelBuilder.Entity("SGF.Domain.Entities.DespesaMes", b =>
-                {
-                    b.HasOne("SGF.Domain.Entities.Despesa", "Despesa")
-                        .WithMany("DespesaMeses")
-                        .HasForeignKey("DespesaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SGF.Domain.Entities.Mes", "Mes")
-                        .WithMany("DespesaMeses")
-                        .HasForeignKey("MesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Despesa");
-
-                    b.Navigation("Mes");
-                });
-
             modelBuilder.Entity("SGF.Domain.Entities.Categoria", b =>
                 {
                     b.Navigation("Despesas");
-                });
-
-            modelBuilder.Entity("SGF.Domain.Entities.Despesa", b =>
-                {
-                    b.Navigation("DespesaMeses");
-                });
-
-            modelBuilder.Entity("SGF.Domain.Entities.Mes", b =>
-                {
-                    b.Navigation("DespesaMeses");
                 });
 #pragma warning restore 612, 618
         }

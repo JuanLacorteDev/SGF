@@ -3,16 +3,12 @@ using SGF.Domain.Entities.Messages;
 
 namespace SGF.Domain.Entities.Validations
 {
-    public class RemuneracaoValidator : AbstractValidator<Remuneracao>
+    public class ReceitaValidator : AbstractValidator<Receita>
     {
-        public RemuneracaoValidator()
+        public ReceitaValidator()
         {
             RuleFor(r => r.Valor)
                 .NotNull().WithMessage(MessagesResource.E004);
-
-            RuleFor(r => r.MesInicioId)
-                .NotNull().When(r => r.SalarioMensal == true)
-                .WithMessage(MessagesResource.E005);
 
             RuleFor(r => r.Descricao)
                 .MaximumLength(150)

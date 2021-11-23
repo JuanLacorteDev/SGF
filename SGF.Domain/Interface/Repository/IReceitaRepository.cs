@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace SGF.Domain.Interface.Repository
 {
-    public interface IMesRepository: IRepositoryBase<Mes>
+    public interface IReceitaRepository: IRepositoryBase<Receita>, IDisposable
     {
-        Task<List<Mes>> ObterMesesPorAno(int numAno);
-        Task<List<Mes>> ObterMesesApartir(Guid mesId, int numAno);
     }
 }

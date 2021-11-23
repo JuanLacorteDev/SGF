@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SGF.Application.Interfaces.Application
 {
-    public interface IRemuneracaoApp
+    public interface IReceitaApp
     {
-        Task Adicionar(RemuneracaoVM remueracao);
-        Task<List<RemuneracaoVM>> ObterRemueracao(Guid MesId);
+        Task Adicionar(ReceitaVM receita);
+        Task<List<ReceitaVM>> ObterReceitas();
     }
 }
