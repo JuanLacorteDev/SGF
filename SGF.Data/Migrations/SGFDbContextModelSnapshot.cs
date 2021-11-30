@@ -87,7 +87,7 @@ namespace SGF.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Remuneracoes");
+                    b.ToTable("Receitas");
                 });
 
             modelBuilder.Entity("SGF.Domain.Entities.Despesa", b =>

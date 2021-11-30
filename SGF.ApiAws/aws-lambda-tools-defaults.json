@@ -6,13 +6,13 @@
         "dotnet lambda help",
         "All the command line options for the Lambda command can be specified in this file."
     ],
-    "profile"     : "SGFE-Admin",
+    "profile"     : "sgfeAcessoTotalAWS",
     "region"      : "sa-east-1",
     "configuration" : "Production",
     "framework"     : "netcoreapp3.1",
     "s3-prefix"     : "SGF.ApiAws/",
     "template"      : "serverless.template",
     "template-parameters" : "",
-    "s3-bucket"           : "sgfe",
-    "stack-name"          : "sgfe"
+    "s3-bucket"           : "sgfebucketapi",
+    "stack-name"          : "sgfeDotNetCoreApi"
 }

@@ -10,6 +10,6 @@ namespace SGF.Application.ViewModels
         public string Descricao { get; set; }
         public Double Valor { get; set; }
         public Guid CategoriaId { get; set; }
-        public Guid MesId { get; set; }
+        public DateTime Vencimento { get; set; }
     }
 }
