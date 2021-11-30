@@ -28,7 +28,7 @@ namespace SGF.Domain.Services
 
                 if (receita.SalarioMensal)
                 {
-
+                    //considerar como sera tratado esse caso.
                 }
                 await _receitaRepository.Adicionar(receita);
             }
@@ -44,8 +44,7 @@ namespace SGF.Domain.Services
         {
             try
             {
-                var retorno = await _receitaRepository.BuscarPorExpressao(r => r.Data_Lancamento.Month == numMes);
-                return retorno.ToList();
+                return (await _receitaRepository.BuscarPorExpressao(r => r.Data_Lancamento.Month == numMes)).ToList();
             }
             catch (Exception ex)
             {
