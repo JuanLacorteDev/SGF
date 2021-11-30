@@ -24,9 +24,10 @@ namespace SGF.Application.Application
             await _despesaService.Adicionar(_mapper.Map<DespesaVM, Despesa>(despesa));
         }
 
-        public Task<List<DespesaVM>> ObterDespesas()
+        public async Task<List<DespesaVM>> ObterDespesas()
         {
-            throw new System.NotImplementedException();
+            var retorno = await _despesaService.ObterDespesas();
+            return _mapper.Map<List<DespesaVM>>(retorno);
         }
     }
 }

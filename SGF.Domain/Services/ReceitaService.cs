@@ -5,6 +5,7 @@ using SGF.Domain.Interface.Service;
 using SGF.Domain.Interfaces.Notification;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,6 +39,25 @@ namespace SGF.Domain.Services
 
         }
 
+        
+        public async Task<List<Receita>> ObterReceitasPorMes(double numMes)
+        {
+            try
+            {
+                var retorno = await _receitaRepository.BuscarPorExpressao(r => r.Data_Lancamento.Month == numMes);
+                return retorno.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Task<List<Receita>> ObterReceitas()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Dispose()
         {
             _receitaRepository?.Dispose();
@@ -45,7 +65,7 @@ namespace SGF.Domain.Services
 
 
         #region Métodos Privados
-    
+
         #endregion
 
     }
