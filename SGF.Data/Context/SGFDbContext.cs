@@ -12,7 +12,7 @@ namespace SGF.Data.Context
 
         public DbSet<Despesa> Despesas { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Receita> Remuneracoes { get; set; }
+        public DbSet<Receita> Receitas { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

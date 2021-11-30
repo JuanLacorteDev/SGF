@@ -5,8 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using SGF.ApiAws.Configuration;
 using SGF.Data.Context;
+using System;
 
 namespace SGF.ApiAws
 {
@@ -28,6 +30,20 @@ namespace SGF.ApiAws
             });
 
             services.AddControllers().AddNewtonsoftJson();
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "Api SGF - Verson 1",
+                        Version = "V1",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Juan Henrique Lacorte",
+                            Url = new Uri("https://github.com/JuanLacorteDev")
+                        }
+                    });
+            });
 
             services.ResolveDepedencies();
             services.AddAutoMapper(typeof(Startup));
@@ -57,6 +73,13 @@ namespace SGF.ApiAws
                 {
                     await context.Response.WriteAsync("Welcome to running ASP.NET Core on AWS Lambda");
                 });
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = "swagger";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API SGF");
             });
         }
     }
