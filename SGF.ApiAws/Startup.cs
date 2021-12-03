@@ -29,6 +29,8 @@ namespace SGF.ApiAws
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
 
+            services.AddIdentityConfiguration(Configuration);
+
             services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(opt =>
             {
@@ -56,16 +58,16 @@ namespace SGF.ApiAws
             {
                 app.UseDeveloperExceptionPage();
             }
-            #if DEBUG
+#if DEBUG
 
-            #else
+#else
             app.UseHttpsRedirection();
-            #endif
+#endif
+
+            app.UseAuthentication();
 
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
