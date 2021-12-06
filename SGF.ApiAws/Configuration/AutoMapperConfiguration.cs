@@ -29,7 +29,7 @@ namespace SGF.ApiAws.Configuration
         #endregion
 
         #region metodos de auxilio para resolução de configuraçoes mais complexas do mapper 
-
+        
         #endregion
     }
 }
