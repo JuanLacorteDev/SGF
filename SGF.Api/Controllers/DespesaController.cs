@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SGF.Api.Extensions;
 using SGF.Application.Interfaces.Application;
 using SGF.Application.ViewModels;
 using SGF.Domain.Interfaces.Notification;
@@ -18,6 +19,8 @@ namespace SGF.Api.Controllers
             _despesaApp = depesaApp;
         }
 
+        
+        [ClaimsAuthorize("Despesa","Consultar")]
         [HttpGet]
         public async Task<ActionResult<List<DespesaVM>>> ObterDespesas()
         {
