@@ -10,9 +10,8 @@ namespace SGF.Api.AutoMapperConfiguration
         public AutoMapperMappings()
         {
             #region Mapper Despesa e VM's
-            CreateMap<DespesaVM, Despesa>().ReverseMap();
-
-            CreateMap<Despesa, DespesaVM>();
+            CreateMap<DespesaAdicionarVM, Despesa>().ReverseMap();
+            CreateMap<DespesaListarVM, Despesa>().ReverseMap();
             #endregion
 
             #region Mapper Categoria e VM's
@@ -23,7 +22,6 @@ namespace SGF.Api.AutoMapperConfiguration
 
             #region Mapper Remuneracao e VM's
             CreateMap<ReceitaVM, Receita>().ReverseMap();
-
             CreateMap<Receita, ReceitaVM>().ReverseMap();
             #endregion
         }

@@ -3,6 +3,7 @@ using SGF.Api.Extensions;
 using SGF.Application.Interfaces.Application;
 using SGF.Application.ViewModels.Entidades;
 using SGF.Domain.Interfaces.Notification;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -20,15 +21,14 @@ namespace SGF.Api.Controllers
         }
 
         
-        [ClaimsAuthorize("Despesa","Consultar")]
         [HttpGet]
-        public async Task<ActionResult<List<DespesaVM>>> ObterDespesas()
+        public async Task<ActionResult<List<DespesaListarVM>>> ObterDespesas(Guid userId)
         {
-            return await _despesaApp.ObterDespesas();
+            return await _despesaApp.ObterDespesas(userId);
         }
 
         [HttpPost]
-        public async Task<ActionResult> AdicionarDespesa(DespesaVM despesa)
+        public async Task<ActionResult> AdicionarDespesa(DespesaAdicionarVM despesa)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
             await _despesaApp.Adicionar(despesa);

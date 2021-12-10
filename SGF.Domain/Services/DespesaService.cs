@@ -5,6 +5,7 @@ using SGF.Domain.Interface.Service;
 using SGF.Domain.Interfaces.Notification;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,12 +20,12 @@ namespace SGF.Domain.Services
             _despesaRepository = despesaRepository;
         }
 
-        public async Task<List<Despesa>> ObterDespesas()
+        public async Task<List<Despesa>> ObterDespesas(Guid userId)
         {
             try
             {
-                var result = await _despesaRepository.ObterTodasEntidades();
-                return result;
+                var result = await _despesaRepository.BuscarPorExpressao(d => d.UserId == userId);
+                return result.ToList();
             }
             catch(Exception ex)
             {
