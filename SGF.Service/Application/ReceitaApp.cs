@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SGF.Application.Interfaces.Application;
-using SGF.Application.ViewModels;
+using SGF.Application.ViewModels.Entidades;
 using SGF.Domain.Entities;
 using SGF.Domain.Interface.Service;
 using System;

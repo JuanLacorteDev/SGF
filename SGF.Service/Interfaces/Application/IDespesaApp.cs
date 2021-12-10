@@ -1,4 +1,4 @@
-﻿using SGF.Application.ViewModels;
+﻿using SGF.Application.ViewModels.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

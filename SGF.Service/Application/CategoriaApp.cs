@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SGF.Application.Interfaces.Application;
 using SGF.Application.ViewModels;
+using SGF.Application.ViewModels.Entidades;
 using SGF.Domain.Entities;
 using SGF.Domain.Interface.Service;
 using System;
@@ -21,15 +22,15 @@ namespace SGF.Application.Application
             _mapper = mapper;
         }
 
-        public async Task Adicionar(CategoriaVM categoria)
+        public async Task Adicionar(CategoriaAdicionarVM categoria)
         {
             await _categoriaService.Adicionar(_mapper.Map<Categoria>(categoria));
         }
 
-        public async Task<List<CategoriaVM>> ObterCategorias()
+        public async Task<List<CategoriaListarVM>> ObterCategorias(Guid? userId)
         {
-            var result = await _categoriaService.ObterCategorias();
-            return _mapper.Map<List<CategoriaVM>>(result);
+            var result = await _categoriaService.ObterCategorias(userId);
+            return _mapper.Map<List<CategoriaListarVM>>(result);
         }
     }
 }

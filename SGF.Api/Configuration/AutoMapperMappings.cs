@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using SGF.Application.ViewModels;
+using SGF.Application.ViewModels.Entidades;
 using SGF.Domain.Entities;
-using System;
-using System.Collections.Generic;
 
 namespace SGF.Api.AutoMapperConfiguration
 {
@@ -18,7 +16,8 @@ namespace SGF.Api.AutoMapperConfiguration
             #endregion
 
             #region Mapper Categoria e VM's
-            CreateMap<CategoriaVM, Categoria>().ReverseMap();
+            CreateMap<CategoriaListarVM, Categoria>().ReverseMap();
+            CreateMap<CategoriaAdicionarVM, Categoria>().ReverseMap();
             CreateMap<CategoriaDespesasVM, Categoria>().ReverseMap();
             #endregion
 

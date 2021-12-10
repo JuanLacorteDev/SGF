@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SGF.Api.Extensions;
 using SGF.Application.Interfaces.Application;
-using SGF.Application.ViewModels;
+using SGF.Application.ViewModels.Entidades;
 using SGF.Domain.Interfaces.Notification;
 using System.Collections.Generic;
 using System.Threading.Tasks;

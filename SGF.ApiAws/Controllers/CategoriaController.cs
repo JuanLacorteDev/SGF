@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SGF.Application.Interfaces.Application;
-using SGF.Application.ViewModels;
+using SGF.Application.ViewModels.Entidades;
 using SGF.Domain.Interfaces.Notification;
 using System;
 using System.Collections.Generic;
@@ -21,13 +20,13 @@ namespace SGF.ApiAws.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<CategoriaVM>>> ObterCategorias()
+        public async Task<ActionResult<List<CategoriaListarVM>>> ObterCategorias(Guid? userId)
         {
-            return await _categoriaApp.ObterCategorias();
+            return await _categoriaApp.ObterCategorias(userId);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Adicionar(CategoriaVM categoria)
+        public async Task<ActionResult> Adicionar(CategoriaAdicionarVM categoria)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
