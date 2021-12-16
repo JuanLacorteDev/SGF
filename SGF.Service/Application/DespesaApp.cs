@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using SGF.Application.Interfaces.Application;
 using SGF.Application.ViewModels.Entidades;
+using SGF.Application.ViewModels.QueryEntidades;
 using SGF.Domain.Entities;
+using SGF.Domain.Entities.QueryEntidades;
 using SGF.Domain.Interface.Service;
 using System;
 using System.Collections.Generic;
@@ -25,9 +27,9 @@ namespace SGF.Application.Application
             await _despesaService.Adicionar(_mapper.Map<DespesaAdicionarVM, Despesa>(despesa));
         }
 
-        public async Task<List<DespesaListarVM>> ObterDespesas(Guid userId)
+        public async Task<List<DespesaListarVM>> ObterDespesas(FiltroDespesaVM filtro)
         {
-            var retorno = await _despesaService.ObterDespesas(userId);
+            var retorno = await _despesaService.ObterDespesas(_mapper.Map<FiltroDespesa>(filtro));
             return _mapper.Map<List<DespesaListarVM>>(retorno);
         }
     }

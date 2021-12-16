@@ -2,6 +2,7 @@
 using SGF.Api.Extensions;
 using SGF.Application.Interfaces.Application;
 using SGF.Application.ViewModels.Entidades;
+using SGF.Application.ViewModels.QueryEntidades;
 using SGF.Domain.Interfaces.Notification;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,9 @@ namespace SGF.Api.Controllers
 
         
         [HttpGet]
-        public async Task<ActionResult<List<DespesaListarVM>>> ObterDespesas(Guid userId)
+        public async Task<ActionResult<List<DespesaListarVM>>> ObterDespesas(FiltroDespesaVM filtro)
         {
-            return await _despesaApp.ObterDespesas(userId);
+            return await _despesaApp.ObterDespesas(filtro);
         }
 
         [HttpPost]

@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using SGF.Application.ViewModels.Entidades;
+using SGF.Application.ViewModels.QueryEntidades;
 using SGF.Domain.Entities;
+using SGF.Domain.Entities.QueryEntidades;
 
 namespace SGF.Api.AutoMapperConfiguration
 {
@@ -12,6 +14,9 @@ namespace SGF.Api.AutoMapperConfiguration
             #region Mapper Despesa e VM's
             CreateMap<DespesaAdicionarVM, Despesa>().ReverseMap();
             CreateMap<DespesaListarVM, Despesa>().ReverseMap();
+
+            //filtro
+            CreateMap<FiltroDespesa, FiltroDespesaVM>().ReverseMap();
             #endregion
 
             #region Mapper Categoria e VM's
