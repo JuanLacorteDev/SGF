@@ -5,7 +5,6 @@ using SGF.Application.ViewModels.QueryEntidades;
 using SGF.Domain.Entities;
 using SGF.Domain.Entities.QueryEntidades;
 using SGF.Domain.Interface.Service;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

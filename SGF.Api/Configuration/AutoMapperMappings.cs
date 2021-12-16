@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using SGF.Application.ViewModels;
 using SGF.Application.ViewModels.Entidades;
 using SGF.Application.ViewModels.QueryEntidades;
 using SGF.Domain.Entities;
 using SGF.Domain.Entities.QueryEntidades;
+using System;
+using System.Collections.Generic;
 
 namespace SGF.Api.AutoMapperConfiguration
 {
@@ -15,18 +18,17 @@ namespace SGF.Api.AutoMapperConfiguration
             CreateMap<DespesaAdicionarVM, Despesa>().ReverseMap();
             CreateMap<DespesaListarVM, Despesa>().ReverseMap();
 
-            //filtro
-            CreateMap<FiltroDespesa, FiltroDespesaVM>().ReverseMap();
+            CreateMap<FiltroDespesaVM, FiltroDespesa>().ReverseMap();
             #endregion
 
             #region Mapper Categoria e VM's
-            CreateMap<CategoriaListarVM, Categoria>().ReverseMap();
             CreateMap<CategoriaAdicionarVM, Categoria>().ReverseMap();
-            CreateMap<CategoriaDespesasVM, Categoria>().ReverseMap();
+            CreateMap<CategoriaListarVM, Categoria>().ReverseMap();
             #endregion
 
             #region Mapper Remuneracao e VM's
             CreateMap<ReceitaVM, Receita>().ReverseMap();
+
             CreateMap<Receita, ReceitaVM>().ReverseMap();
             #endregion
         }
