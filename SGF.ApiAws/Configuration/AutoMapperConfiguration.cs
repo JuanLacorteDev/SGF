@@ -1,10 +1,6 @@
 ﻿using AutoMapper;
-using SGF.Application.ViewModels;
+using SGF.Application.ViewModels.Entidades;
 using SGF.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SGF.ApiAws.Configuration
 {
@@ -18,7 +14,7 @@ namespace SGF.ApiAws.Configuration
             #endregion
 
             #region Mapper Categoria e VM's
-            CreateMap<CategoriaVM, Categoria>().ReverseMap();
+            CreateMap<CategoriaListarVM, Categoria>().ReverseMap();
             CreateMap<CategoriaDespesasVM, Categoria>().ReverseMap();
             #endregion
 
@@ -29,7 +25,7 @@ namespace SGF.ApiAws.Configuration
         #endregion
 
         #region metodos de auxilio para resolução de configuraçoes mais complexas do mapper 
-
+        
         #endregion
     }
 }

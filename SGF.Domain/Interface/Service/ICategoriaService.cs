@@ -8,6 +8,6 @@ namespace SGF.Domain.Interface.Service
     public interface ICategoriaService : IDisposable
     {
         Task Adicionar(Categoria categoria);
-        Task<List<Categoria>> ObterCategorias();
+        Task<List<Categoria>> ObterCategorias(Guid? userId);
     }
 }

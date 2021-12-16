@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGF.Application.ViewModels
+namespace SGF.Application.ViewModels.Entidades
 {
-    public class DespesaVM
+    public class DespesaListarVM
     {
+        public Guid Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public Double Valor { get; set; }

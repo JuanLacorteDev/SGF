@@ -24,10 +24,13 @@ namespace SGF.ApiAws
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
+            //Environment.GetEnvironmentVariable("dataBase1Password");
             services.AddDbContext<SGFDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
+
+            services.AddIdentityConfiguration(Configuration);
 
             services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(opt =>
@@ -56,16 +59,16 @@ namespace SGF.ApiAws
             {
                 app.UseDeveloperExceptionPage();
             }
-            #if DEBUG
+#if DEBUG
 
-            #else
+#else
             app.UseHttpsRedirection();
-            #endif
+#endif
+
+            app.UseAuthentication();
 
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

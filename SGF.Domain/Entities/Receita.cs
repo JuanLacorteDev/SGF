@@ -9,6 +9,7 @@ namespace SGF.Domain.Entities
         public Double Valor { get; set; }
         public string Descricao { get; set; }
         public bool SalarioMensal { get; set; }
+        public Guid UserId { get; set; }
         public DateTime Data_Lancamento { get; set; }
 
     }

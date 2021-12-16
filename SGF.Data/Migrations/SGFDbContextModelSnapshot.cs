@@ -31,6 +31,9 @@ namespace SGF.Data.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.ToTable("Categorias");
@@ -51,6 +54,9 @@ namespace SGF.Data.Migrations
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("varchar(40)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Valor")
                         .IsRequired()
@@ -80,6 +86,9 @@ namespace SGF.Data.Migrations
 
                     b.Property<bool>("SalarioMensal")
                         .HasColumnType("bit");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Valor")
                         .IsRequired()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SGF.Application.ViewModels
+namespace SGF.Application.ViewModels.Entidades
 {
     public class CategoriaDespesasVM
     {
@@ -10,6 +10,6 @@ namespace SGF.Application.ViewModels
         public DateTime Data_Cadastro { get; set; }
 
         //Para mapeamento EF core
-        public List<DespesaVM> Despesas { get; set; }
+        public List<DespesaAdicionarVM> Despesas { get; set; }
     }
 }
