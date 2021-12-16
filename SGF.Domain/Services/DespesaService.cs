@@ -16,9 +16,30 @@ namespace SGF.Domain.Services
     {
         protected readonly IDespesaRepository _despesaRepository;
         public DespesaService(IDespesaRepository despesaRepository,
-                              INotificador notificador) : base(notificador)
+                              INotificador notificador): base(notificador)
         {
             _despesaRepository = despesaRepository;
+        }
+
+        public async Task<List<Despesa>> ObterDespesas(FiltroDespesa filtro)
+        {
+            try
+            {
+                var result = await _despesaRepository.BuscarPorExpressao(
+                        d => d.UserId == filtro.UserId
+                        && filtro.NumAno != 0 ? d.Vencimento.Year == filtro.NumAno : true
+                        && filtro.NumMes != 0 ? d.Vencimento.Month == filtro.NumMes : true
+                        && filtro.InicioPeriodo != null ? d.Vencimento >= filtro.InicioPeriodo :  true
+                        && filtro.FimPeriodo != null ? d.Vencimento <= filtro.FimPeriodo : true
+                    );
+
+                return result.ToList();
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public async Task Adicionar(Despesa despesa)
@@ -33,7 +54,7 @@ namespace SGF.Domain.Services
             {
                 throw;
             }
-
+            
         }
 
         public async Task Atualizar(Despesa despesa)
@@ -48,7 +69,7 @@ namespace SGF.Domain.Services
             {
                 throw;
             }
-
+           
         }
 
         public async Task Remover(Guid id)
@@ -56,29 +77,11 @@ namespace SGF.Domain.Services
             await _despesaRepository.Remover(id);
         }
 
-        public async Task<List<Despesa>> ObterDespesas(FiltroDespesa filtro)
-        {
-            try
-            {
-                var result = await _despesaRepository.BuscarPorExpressao(
-                        d => d.UserId == filtro.UserId
-                        && filtro.NumMes != 0 ? d.Vencimento.Month == filtro.NumMes : true
-                        && filtro.NumAno != 0 ? d.Vencimento.Year == filtro.NumAno : true
-                        && filtro.InicioPeriodo != null ? d.Vencimento >= filtro.InicioPeriodo : true
-                        && filtro.FimPeriodo != null ? d.Vencimento <= filtro.FimPeriodo : true
-                    );
-
-                return result.ToList();
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
         public void Dispose()
         {
             _despesaRepository?.Dispose();
         }
+
+        
     }
 }

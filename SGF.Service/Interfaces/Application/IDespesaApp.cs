@@ -1,4 +1,5 @@
-﻿using SGF.Application.ViewModels.Entidades;
+﻿using SGF.Application.ViewModels;
+using SGF.Application.ViewModels.Entidades;
 using SGF.Application.ViewModels.QueryEntidades;
 using System;
 using System.Collections.Generic;
