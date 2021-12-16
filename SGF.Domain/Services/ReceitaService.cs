@@ -26,10 +26,6 @@ namespace SGF.Domain.Services
             {
                 if (!ExecutarValidacao(new ReceitaValidator(), receita)) return;
 
-                if (receita.SalarioMensal)
-                {
-                    //considerar como sera tratado esse caso.
-                }
                 await _receitaRepository.Adicionar(receita);
             }
             catch (Exception ex)

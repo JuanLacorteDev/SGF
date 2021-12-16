@@ -8,6 +8,7 @@ namespace SGF.Domain.Entities
     {
         public string Nome { get; set; }
         public DateTime Data_Cadastro { get; set; }
+        public Guid? UserId { get; set; }
 
         //Para mapeamento EF core
         public List<Despesa> Despesas { get; set; }

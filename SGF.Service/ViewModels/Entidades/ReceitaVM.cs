@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SGF.Application.ViewModels
+namespace SGF.Application.ViewModels.Entidades
 {
     public class ReceitaVM
     {

@@ -5,6 +5,7 @@ using SGF.Domain.Interface.Service;
 using SGF.Domain.Interfaces.Notification;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,9 +29,30 @@ namespace SGF.Domain.Services
             await _categoriaRepository.Adicionar(categoria);
         }
 
-        public async Task<List<Categoria>> ObterCategorias()
+        public async Task<List<Categoria>> ObterCategorias(Guid? userId)
         {
-            return await _categoriaRepository.ObterTodasEntidades();
+            try
+            {
+                var retorno = new List<Categoria>();
+                if (userId != null)
+                {
+                    var result = await _categoriaRepository.BuscarPorExpressao(c => c.UserId == userId.Value || c.UserId == null);
+                    retorno = result.ToList();
+                }
+                else
+                {
+                    var result = await _categoriaRepository.BuscarPorExpressao(c => c.UserId == null);
+                    retorno = result.ToList();
+                }
+
+                return retorno; 
+                
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public void Dispose()

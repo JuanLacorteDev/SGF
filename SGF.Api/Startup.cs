@@ -28,6 +28,8 @@ namespace SGF.Api
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
 
+            services.AddIdentityConfiguration(Configuration);
+
             services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(opt =>
             {
@@ -57,6 +59,8 @@ namespace SGF.Api
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 
